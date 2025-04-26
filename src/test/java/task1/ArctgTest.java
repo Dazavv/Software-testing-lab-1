@@ -12,6 +12,7 @@ public class ArctgTest {
     public void testArctg_Zero(){
         assertEquals(0, FunctionArctg.calc(0, 100), 1e-6);
     }
+
     @Test
     public void testArctg_Positive(){
         assertEquals(Math.atan(0.5), FunctionArctg.calc(0.5, 100), 1e-6);
@@ -35,6 +36,14 @@ public class ArctgTest {
     void testArctg_OutOfRange() {
         assertThrows(IllegalArgumentException.class, () -> FunctionArctg.calc(2, 100));
         assertThrows(IllegalArgumentException.class, () -> FunctionArctg.calc(-2, 100));
+    }
+    @Test
+    void testArctg_NaN() {
+        assertThrows(IllegalArgumentException.class, () -> FunctionArctg.calc(Double.NaN, 100));
+    }
+    @Test
+    void testArctg_MaxValue() {
+        assertThrows(IllegalArgumentException.class, () -> FunctionArctg.calc(Double.MAX_VALUE, 100));
     }
 
     @ParameterizedTest()

@@ -3,18 +3,18 @@ package task3;
 public class Engine {
     private final String name;
     private final String type;
-    private String status;
+    private Boolean status;
 
-    public Engine(String name, String type, String status) {
+    public Engine(String name) {
         this.name = name;
-        this.type = type;
-        this.status = status;
+        this.type = "двигатель корабля";
+        this.status = false;
     }
     void activate() {
-        status = "работает";
+        status = true;
     }
     void deactivate() {
-        status = "не работает";
+        status = false;
     }
 
     public String getName() {
@@ -25,11 +25,7 @@ public class Engine {
         return type;
     }
 
-    public String getStatus() {
+    public Boolean getStatus() {
         return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }

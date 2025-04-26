@@ -1,17 +1,13 @@
 package task3;
 
-public class Direction {
-    private String type;
+public enum Direction {
+    FORWARD("вперед"),
+    ALL_DIRECTIONS("во всех направлениях"),
+    TOWARD_ROCKETS("навстречу ракетам");
 
-    Direction(String type) {
-        this.type = type;
-    }
+    private final String description;
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    Direction(String description) {
+        this.description = description;
     }
 }
